@@ -1,0 +1,40 @@
+// :root {
+//     --primary-color: #fff;
+//     --accent-color: #000;
+
+// }
+
+$primary-color: #fff;
+$accent-color: #000;
+$pink-color: pink;
+$green-color: green;
+
+//map-get
+$font-weights:(
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+
+
+body {
+    background: $pink-color;
+    
+}
+
+//nesting
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+
+    #{&}__para {
+        font-weight: map-get($font-weights , bold); 
+
+        &:hover{
+            color: $green-color;
+            background: $primary-color;
+        }
+
+    }
+}
