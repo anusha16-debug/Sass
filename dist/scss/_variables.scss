@@ -2,6 +2,9 @@ $primary-color: #fff;
 $accent-color: #000;
 $pink-color: pink;
 $green-color: green;
+$purple-color: purple;
+$orange-bg : orange;
+$pt-top : 10px;
 
 //map-get
 $font-weights:(
@@ -9,3 +12,5 @@ $font-weights:(
     "medium": 500,
     "bold": 700
 );
+
+$mobile : 800px;

@@ -27,12 +27,32 @@ body {
   margin: 0 auto;
 }
 
-.main .main__para {
+.main .main__para1, .main .main__para2 {
   font-weight: 700;
 }
 
-.main .main__para:hover {
+.main .main__para1:hover, .main .main__para2:hover {
   color: green;
   background: #fff;
+}
+
+.main .main__para2:hover {
+  color: purple;
+  background-color: orange;
+}
+
+@media (max-width: 800px) {
+  .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.classOne, .classTwo {
+  color: purple;
+  font-weight: 500;
+  padding-top: 10px;
 }
 /*# sourceMappingURL=main.css.map */
