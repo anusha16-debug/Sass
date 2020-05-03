@@ -1,21 +1,27 @@
-// :root {
-//     --primary-color: #fff;
-//     --accent-color: #000;
 
-// }
+@import './resets'; 
+@import './variables';    // no need to use underscore or extension
 
-$primary-color: #fff;
-$accent-color: #000;
-$pink-color: pink;
-$green-color: green;
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name);
+}
 
-//map-get
-$font-weights:(
-    "regular": 400,
-    "medium": 500,
-    "bold": 700
-);
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
 
+
+@mixin  theme($light-meme: true) {
+    @if $light-meme {
+        // background-color: darken($accent-color, 100%);
+        // color : lighten($pink-color, 100%);
+        background-color: $accent-color;
+        color : $pink-color;
+    }
+}
 
 body {
     background: $pink-color;
@@ -25,11 +31,12 @@ body {
 //nesting
 
 .main {
+    @include flexCenter(row);
     width: 80%;
     margin: 0 auto;
 
     #{&}__para {
-        font-weight: map-get($font-weights , bold); 
+        font-weight: weight(bold); 
 
         &:hover{
             color: $green-color;
@@ -37,4 +44,8 @@ body {
         }
 
     }
+}
+
+.changeColor{
+    @include theme($light-meme: false);
 }
